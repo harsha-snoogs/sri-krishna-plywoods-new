@@ -3,7 +3,7 @@ import { BUSINESS_DATA } from '@/data/business';
 import { MATERIAL_GUIDES } from '@/data/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = BUSINESS_DATA.meta.siteUrl;
+  const baseUrl = BUSINESS_DATA.meta.siteUrl.replace(/\/$/, '');
 
   const staticRoutes = [
     '',

@@ -48,7 +48,7 @@ export const BUSINESS_DATA = {
   meta: {
     defaultTitle: 'Sri Krishna Plywoods & Hardwares | Plywood & Hardware Shop in Hosur',
     defaultDescription: 'Sri Krishna Plywoods & Hardwares in Hosur offers premium plywood, laminates, hardware, adhesives and interior materials from trusted brands. Visit us at Indira Nagar or call 9944057507.',
-    siteUrl: 'https://srikrishnaplywoods.com', // Placeholder canonical domain setup
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://srikrishnaplywoods.yukhtara.in',
   }
 };
 
