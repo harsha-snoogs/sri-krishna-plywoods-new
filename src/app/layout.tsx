@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  verification: {
+    google: 'google96df37acacefbf8c',
+  },
   keywords: [
     'Sri Krishna Plywoods & Hardwares',
     'Plywood shop in Hosur',
