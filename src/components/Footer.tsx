@@ -10,7 +10,7 @@ export default function Footer() {
         backgroundColor: 'var(--deep-walnut-dark)',
         color: 'var(--stone-ivory)',
         paddingTop: '4rem',
-        paddingBottom: '2rem',
+        paddingBottom: '5.5rem',
         borderTop: '1px solid var(--deep-walnut)',
         marginTop: 'auto',
       }}
@@ -186,7 +186,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright & Disclaimer Bar */}
+        {/* Copyright Bar */}
         <div
           style={{
             paddingTop: '2rem',
@@ -200,7 +200,7 @@ export default function Footer() {
           }}
         >
           <p>© 2026 {BUSINESS_DATA.name}. All rights reserved.</p>
-          <p>Local SEO &amp; Business Information Portal • Hosur, Tamil Nadu</p>
+          <p>Plywood, Laminates &amp; Hardware Store • Hosur, Tamil Nadu</p>
         </div>
       </div>
     </footer>

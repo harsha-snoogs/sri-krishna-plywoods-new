@@ -28,7 +28,7 @@ export default function HomePage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '3.5rem',
               alignItems: 'center',
             }}
@@ -426,7 +426,7 @@ export default function HomePage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
               gap: '3rem',
               alignItems: 'center',
               backgroundColor: 'var(--deep-walnut)',
@@ -443,7 +443,7 @@ export default function HomePage() {
                 Visit Our Hosur Showroom
               </h2>
               <address style={{ fontStyle: 'normal', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '2rem', color: 'rgba(252, 251, 248, 0.9)' }}>
-                <strong style={{ color: 'var(--champagne-gold)', display: 'block', fontSize: '1.2rem', marginBottom: '0.25rem' }}>
+                <strong style={{ color: 'var(--champagne-gold)', display: 'block', fontSize: '1.2rem', marginBottom: '0.25rem', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                   {BUSINESS_DATA.name}
                 </strong>
                 {BUSINESS_DATA.address.street}
