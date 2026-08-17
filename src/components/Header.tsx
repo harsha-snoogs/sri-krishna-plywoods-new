@@ -36,53 +36,35 @@ export default function Header() {
 
   return (
     <header
+      className="header-bar"
       style={{
         position: 'sticky',
         top: 0,
         zIndex: 100,
         backgroundColor: isScrolled ? 'rgba(252, 251, 248, 0.96)' : 'var(--linen-white)',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-        borderBottom: `1px solid ${isScrolled ? 'var(--border-light)' : 'transparent'}`,
+        borderBottom: `1px solid ${isScrolled ? 'var(--border-light)' : 'var(--border-subtle)'}`,
         transition: 'all 0.3s ease',
-        paddingTop: isScrolled ? '0.75rem' : '1.1rem',
-        paddingBottom: isScrolled ? '0.75rem' : '1.1rem',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Brand Logo Image & Canonical Identity */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          <div style={{ position: 'relative', width: '92px', height: '32px', flexShrink: 0 }}>
+        {/* Brand Logo Image & Responsive Identity */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          <div className="logo-container" style={{ position: 'relative', flexShrink: 0 }}>
             <Image
               src="/images/logo.png"
               alt={`${BUSINESS_DATA.name} Logo`}
               fill
               priority
-              sizes="92px"
+              sizes="80px"
               style={{ objectFit: 'contain' }}
             />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '1.12rem',
-                fontWeight: 700,
-                color: 'var(--deep-walnut)',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.15,
-              }}
-            >
+            <span className="brand-title">
               {BUSINESS_DATA.name}
             </span>
-            <span
-              style={{
-                fontSize: '0.68rem',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'var(--olive-green)',
-                fontWeight: 600,
-              }}
-            >
+            <span className="brand-subtitle">
               Hosur, Tamil Nadu
             </span>
           </div>
@@ -134,11 +116,14 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
           style={{
-            padding: '0.5rem',
+            padding: '0.4rem',
             color: 'var(--deep-walnut)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             {mobileMenuOpen ? (
               <path d="M18 6L6 18M6 6l12 12" />
             ) : (
@@ -197,9 +182,64 @@ export default function Header() {
         </div>
       )}
 
-      {/* Embedded CSS for Header Breakpoints */}
+      {/* Responsive Header CSS Styling */}
       <style jsx>{`
+        :global(.header-bar) {
+          padding-top: 0.6rem;
+          padding-bottom: 0.6rem;
+        }
+
+        :global(.logo-container) {
+          width: 72px;
+          height: 25px;
+        }
+
+        :global(.brand-title) {
+          font-family: var(--font-sans);
+          font-size: 0.88rem;
+          font-weight: 700;
+          color: var(--deep-walnut);
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          max-width: 175px;
+        }
+
+        :global(.brand-subtitle) {
+          display: none;
+          font-size: 0.62rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--olive-green);
+          font-weight: 600;
+          margin-top: 0.1rem;
+        }
+
+        @media (min-width: 480px) {
+          :global(.logo-container) {
+            width: 82px;
+            height: 28px;
+          }
+          :global(.brand-title) {
+            font-size: 0.98rem;
+            max-width: none;
+          }
+          :global(.brand-subtitle) {
+            display: block;
+          }
+        }
+
         @media (min-width: 960px) {
+          :global(.header-bar) {
+            padding-top: 0.9rem;
+            padding-bottom: 0.9rem;
+          }
+          :global(.logo-container) {
+            width: 90px;
+            height: 32px;
+          }
+          :global(.brand-title) {
+            font-size: 1.12rem;
+          }
           :global(.desktop-nav),
           :global(.desktop-cta) {
             display: flex !important;

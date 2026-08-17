@@ -44,6 +44,15 @@
   /* Layout Dimensions */
   --max-width: 1280px;
   --header-height: 80px;
+  --mobile-badge-display: inline;
+  --desktop-badge-display: none;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --mobile-badge-display: none;
+    --desktop-badge-display: inline;
+  }
 }
 
 *, *::before, *::after {

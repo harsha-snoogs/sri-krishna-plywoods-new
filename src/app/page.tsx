@@ -36,7 +36,8 @@ export default function HomePage() {
             {/* Left Content Column */}
             <div>
               <div className="badge" style={{ marginBottom: '1.25rem' }}>
-                {BUSINESS_DATA.yearsInBusiness}+ Years Trusted Plywood &amp; Hardware Destination in Hosur (Est. {BUSINESS_DATA.establishedYear})
+                <span style={{ display: 'var(--mobile-badge-display, inline)' }}>{BUSINESS_DATA.yearsInBusiness}+ Years Trust in Hosur • Est. {BUSINESS_DATA.establishedYear}</span>
+                <span style={{ display: 'var(--desktop-badge-display, none)' }}>{BUSINESS_DATA.yearsInBusiness}+ Years Trusted Plywood &amp; Hardware Destination in Hosur (Est. {BUSINESS_DATA.establishedYear})</span>
               </div>
               <h1
                 style={{
