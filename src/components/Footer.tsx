@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BUSINESS_DATA } from '@/data/business';
 
 export default function Footer() {
@@ -24,24 +25,36 @@ export default function Footer() {
             borderBottom: '1px solid rgba(245, 241, 235, 0.12)',
           }}
         >
-          {/* Column 1: Brand & NAP Identity */}
+          {/* Column 1: Brand Logo & NAP Identity */}
           <div>
-            <h2
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '1.35rem',
-                fontWeight: 700,
-                color: 'var(--linen-white)',
-                marginBottom: '0.75rem',
-              }}
-            >
-              {BUSINESS_DATA.name}
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.85rem' }}>
+              <div style={{ position: 'relative', width: '85px', height: '30px', flexShrink: 0 }}>
+                <Image
+                  src="/images/logo.png"
+                  alt={`${BUSINESS_DATA.name} Logo`}
+                  fill
+                  sizes="85px"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
+                  color: 'var(--linen-white)',
+                  margin: 0,
+                  lineHeight: '1.2',
+                }}
+              >
+                {BUSINESS_DATA.name}
+              </h2>
+            </div>
             <p style={{ color: 'rgba(245, 241, 235, 0.75)', fontSize: '0.92rem', marginBottom: '1.25rem' }}>
               Plywood • Laminates • Hardware • Interior Materials
             </p>
             <p style={{ color: 'rgba(245, 241, 235, 0.75)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              Serving homeowners, interior designers, carpenters, and construction contractors across Hosur with quality architectural materials.
+              Serving homeowners, interior designers, carpenters, and construction contractors across Hosur for over {BUSINESS_DATA.yearsInBusiness} years (Est. {BUSINESS_DATA.establishedYear}).
             </p>
           </div>
 

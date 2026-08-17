@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact Us | Sri Krishna Plywoods & Hardwares Hosur',
-  description: 'Contact Sri Krishna Plywoods & Hardwares in Hosur. Visit our store at 10/1 Indira Nagar, Avalapalli Hudco or call 9944057507 for quotes and directions.',
+  description: `Contact Sri Krishna Plywoods & Hardwares in Hosur. ${BUSINESS_DATA.yearsInBusiness}+ years trusted supplier. Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber.`,
   alternates: {
     canonical: '/contact',
   },
@@ -17,11 +17,11 @@ export default function ContactPage() {
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>
-            Store Location &amp; Contact
+            {BUSINESS_DATA.yearsInBusiness}+ Years Trusted Store Location (Est. {BUSINESS_DATA.establishedYear})
           </span>
           <h1 style={{ marginBottom: '1rem' }}>Contact Sri Krishna Plywoods &amp; Hardwares</h1>
-          <p style={{ maxWidth: '680px', fontSize: '1.15rem', color: 'var(--graphite-muted)' }}>
-            Have a project in mind or need material pricing? Visit our showroom in Hosur or speak directly with our team.
+          <p style={{ maxWidth: '720px', fontSize: '1.15rem', color: 'var(--graphite-muted)', lineHeight: '1.7' }}>
+            Have a project requirement or need material pricing? Visit our showroom in Avalapalli Hudco, Hosur or speak directly with our material experts.
           </p>
         </div>
       </section>
@@ -75,6 +75,9 @@ export default function ContactPage() {
                       </strong>
                       <span style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--deep-walnut)' }}>
                         {BUSINESS_DATA.name}
+                      </span>
+                      <span style={{ display: 'block', fontSize: '0.82rem', color: 'var(--graphite-muted)', marginTop: '0.15rem' }}>
+                        Serving Hosur for over {BUSINESS_DATA.yearsInBusiness} years (Est. {BUSINESS_DATA.establishedYear})
                       </span>
                     </div>
                   </div>
@@ -181,6 +184,54 @@ export default function ContactPage() {
                   >
                     Get Directions
                   </a>
+                </div>
+              </div>
+
+              {/* Authorized Brand Badges Box */}
+              <div
+                style={{
+                  backgroundColor: 'var(--stone-ivory)',
+                  padding: '2rem',
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--border-light)',
+                }}
+              >
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', color: 'var(--deep-walnut)' }}>
+                  Brand Dealerships &amp; Genuine Billing
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: 'var(--graphite-muted)', lineHeight: '1.6', marginBottom: '1rem' }}>
+                  {BUSINESS_DATA.authorizedBrandsText} Complete tax-paid GST invoices provided for every purchase.
+                </p>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span
+                    style={{
+                      backgroundColor: 'var(--card-bg)',
+                      border: '1px solid var(--champagne-gold)',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      padding: '0.25rem 0.65rem',
+                      borderRadius: '4px',
+                      color: 'var(--deep-walnut)',
+                    }}
+                  >
+                    ★ Authorized Dealer: Greenply
+                  </span>
+                  {['Greenlam', 'Century', 'Fevicol', 'Godrej', 'Ebco', 'Faber'].map((brand) => (
+                    <span
+                      key={brand}
+                      style={{
+                        backgroundColor: 'var(--card-bg)',
+                        border: '1px solid var(--border-light)',
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        padding: '0.25rem 0.65rem',
+                        borderRadius: '4px',
+                        color: 'var(--graphite)',
+                      }}
+                    >
+                      ✓ Dealer: {brand}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

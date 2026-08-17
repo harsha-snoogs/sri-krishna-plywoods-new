@@ -7,9 +7,10 @@ import { MATERIAL_GUIDES } from '@/data/guides';
 import FaqAccordion from '@/components/FaqAccordion';
 
 export default function HomePage() {
-  // Select 4 high-value FAQs for homepage preview
   const featuredFaqs = FAQ_DATA.slice(0, 4);
   const featuredGuides = MATERIAL_GUIDES.slice(0, 3);
+  const greenplyBrand = TRUSTED_BRANDS.find((b) => b.name === 'Greenply');
+  const otherBrands = TRUSTED_BRANDS.filter((b) => b.name !== 'Greenply').slice(0, 7);
 
   return (
     <>
@@ -35,7 +36,7 @@ export default function HomePage() {
             {/* Left Content Column */}
             <div>
               <div className="badge" style={{ marginBottom: '1.25rem' }}>
-                Hosur Plywood &amp; Hardware Destination
+                {BUSINESS_DATA.yearsInBusiness}+ Years Trusted Plywood &amp; Hardware Destination in Hosur (Est. {BUSINESS_DATA.establishedYear})
               </div>
               <h1
                 style={{
@@ -58,7 +59,7 @@ export default function HomePage() {
                   maxWidth: '560px',
                 }}
               >
-                Plywood, laminates, hardware and interior materials from trusted brands — serving homes, businesses and interior projects across Hosur.
+                Authorized Greenply dealer &amp; trusted dealers for Greenlam, Century, Fevicol (Pidilite), Godrej, Ebco &amp; Faber Chimneys—serving homes and commercial projects across Hosur.
               </p>
 
               {/* Action Buttons */}
@@ -104,15 +105,15 @@ export default function HomePage() {
               >
                 <div>
                   <strong style={{ color: 'var(--deep-walnut)', display: 'block', fontSize: '1rem' }}>
-                    10/1 Indira Nagar
+                    Over {BUSINESS_DATA.yearsInBusiness} Years Trust
                   </strong>
-                  Avalapalli Hudco, Hosur
+                  10/1 Indira Nagar, Avalapalli Hudco
                 </div>
                 <div>
                   <strong style={{ color: 'var(--deep-walnut)', display: 'block', fontSize: '1rem' }}>
-                    Top Brands
+                    GST Billing &amp; Genuine Products
                   </strong>
-                  Greenply, Fevicol, Greenlam, Century
+                  Authorized Greenply Supply
                 </div>
               </div>
             </div>
@@ -144,13 +145,13 @@ export default function HomePage() {
       <section className="section-padding" style={{ backgroundColor: 'var(--linen-white)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '840px' }}>
           <span className="badge" style={{ marginBottom: '1rem' }}>
-            Local Expertise &amp; Craftsmanship
+            Trusted Name Since {BUSINESS_DATA.establishedYear}
           </span>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.6rem)', marginBottom: '1.25rem' }}>
-            Built for Hosur&apos;s Homeowners, Carpenters &amp; Interior Designers
+            Over {BUSINESS_DATA.yearsInBusiness} Years of Quality &amp; Trust in Hosur
           </h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--graphite-muted)', lineHeight: '1.8' }}>
-            At <strong>{BUSINESS_DATA.name}</strong>, we provide engineered plywoods, decorative surface laminates, precision hardware fittings, and reliable wood adhesives. Whether you are constructing a new residence in Avalapalli Hudco or crafting custom wardrobes across Hosur, we bring genuine material guidance to your project.
+            {BUSINESS_DATA.historyText}
           </p>
         </div>
       </section>
@@ -161,7 +162,7 @@ export default function HomePage() {
           <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
             <h2 style={{ marginBottom: '0.75rem' }}>Core Product Categories</h2>
             <p style={{ maxWidth: '600px', margin: '0 auto' }}>
-              Explore our curated selection of architectural materials suited for furniture, modular kitchens, and commercial interiors.
+              Explore our curated selection of architectural materials suited for furniture, modular kitchens, wardrobes, and commercial interiors.
             </p>
           </div>
 
@@ -299,16 +300,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. TRUSTED BRANDS */}
+      {/* 6. TRUSTED & AUTHORIZED BRANDS */}
       <section className="section-padding" style={{ backgroundColor: 'var(--linen-white)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="badge" style={{ marginBottom: '0.75rem' }}>
-              Quality Assured
+              Brand Partnerships &amp; Stockists
             </span>
-            <h2>Trusted Brands We Stock</h2>
+            <h2>Top Brands We Stock</h2>
             <p style={{ maxWidth: '640px', margin: '0.5rem auto 0' }}>
-              We partner with industry-leading manufacturers known for safety, durability, and superior material standards.
+              Authorized dealer for Greenply and trusted dealers for Greenlam, Century, Fevicol (Pidilite), Godrej, Ebco, and Faber Chimneys.
             </p>
           </div>
 
@@ -319,7 +320,54 @@ export default function HomePage() {
               gap: '1.75rem',
             }}
           >
-            {TRUSTED_BRANDS.map((brand) => (
+            {greenplyBrand && (
+              <div
+                style={{
+                  backgroundColor: 'var(--stone-ivory)',
+                  padding: '2rem',
+                  borderRadius: 'var(--radius-md)',
+                  border: '2px solid var(--champagne-gold)',
+                  textAlign: 'center',
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    color: 'var(--deep-walnut)',
+                    backgroundColor: 'var(--card-bg)',
+                    border: '1px solid var(--champagne-gold)',
+                    padding: '0.2rem 0.5rem',
+                    borderRadius: '4px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    display: 'inline-block',
+                    marginBottom: '0.5rem',
+                  }}
+                >
+                  ✓ Authorized Dealer
+                </span>
+                <h3 style={{ fontSize: '1.4rem', color: 'var(--deep-walnut)', marginBottom: '0.25rem' }}>
+                  {greenplyBrand.name}
+                </h3>
+                <span
+                  style={{
+                    display: 'block',
+                    fontSize: '0.8rem',
+                    color: 'var(--olive-green)',
+                    fontWeight: 600,
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  {greenplyBrand.category}
+                </span>
+                <p style={{ fontSize: '0.88rem', color: 'var(--graphite-muted)' }}>
+                  {greenplyBrand.description}
+                </p>
+              </div>
+            )}
+
+            {otherBrands.map((brand) => (
               <div
                 key={brand.name}
                 style={{
@@ -330,7 +378,20 @@ export default function HomePage() {
                   textAlign: 'center',
                 }}
               >
-                <h3 style={{ fontSize: '1.5rem', color: 'var(--deep-walnut)', marginBottom: '0.25rem' }}>
+                <span
+                  style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    color: 'var(--olive-green)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                    display: 'block',
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  Dealer / Stockist
+                </span>
+                <h3 style={{ fontSize: '1.4rem', color: 'var(--deep-walnut)', marginBottom: '0.25rem' }}>
                   {brand.name}
                 </h3>
                 <span
@@ -340,17 +401,21 @@ export default function HomePage() {
                     color: 'var(--olive-green)',
                     fontWeight: 600,
                     marginBottom: '0.75rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
                   }}
                 >
                   {brand.category}
                 </span>
-                <p style={{ fontSize: '0.9rem', color: 'var(--graphite-muted)' }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--graphite-muted)' }}>
                   {brand.description}
                 </p>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <Link href="/brands" className="btn-secondary">
+              View All Brands &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -434,7 +499,7 @@ export default function HomePage() {
             Have a Project in Mind?
           </h2>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--graphite-muted)' }}>
-            Let us help you find the right plywood grade, laminate finish, and hardware fittings for your interior requirement.
+            Let us help you find the right plywood grade, laminate finish, and hardware fittings for your interior requirement. 100% Tax Paid GST Billing provided.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             <a href={BUSINESS_DATA.telLink} className="btn-primary">

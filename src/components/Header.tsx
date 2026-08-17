@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { BUSINESS_DATA } from '@/data/business';
 
@@ -43,41 +44,53 @@ export default function Header() {
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: `1px solid ${isScrolled ? 'var(--border-light)' : 'transparent'}`,
         transition: 'all 0.3s ease',
-        paddingTop: isScrolled ? '0.75rem' : '1.25rem',
-        paddingBottom: isScrolled ? '0.75rem' : '1.25rem',
+        paddingTop: isScrolled ? '0.75rem' : '1.1rem',
+        paddingBottom: isScrolled ? '0.75rem' : '1.1rem',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Brand Logo & Canonical Identity */}
-        <Link href="/" style={{ display: 'flex', flexDirection: 'column' }}>
-          <span
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '1.2rem',
-              fontWeight: 700,
-              color: 'var(--deep-walnut)',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.2,
-            }}
-          >
-            {BUSINESS_DATA.name}
-          </span>
-          <span
-            style={{
-              fontSize: '0.72rem',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--olive-green)',
-              fontWeight: 600,
-            }}
-          >
-            Hosur, Tamil Nadu
-          </span>
+        {/* Brand Logo Image & Canonical Identity */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          <div style={{ position: 'relative', width: '92px', height: '32px', flexShrink: 0 }}>
+            <Image
+              src="/images/logo.png"
+              alt={`${BUSINESS_DATA.name} Logo`}
+              fill
+              priority
+              sizes="92px"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '1.12rem',
+                fontWeight: 700,
+                color: 'var(--deep-walnut)',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.15,
+              }}
+            >
+              {BUSINESS_DATA.name}
+            </span>
+            <span
+              style={{
+                fontSize: '0.68rem',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'var(--olive-green)',
+                fontWeight: 600,
+              }}
+            >
+              Hosur, Tamil Nadu
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="desktop-nav" style={{ display: 'none' }}>
-          <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', alignItems: 'center' }}>
+          <ul style={{ display: 'flex', gap: '1.35rem', listStyle: 'none', alignItems: 'center' }}>
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (
@@ -186,7 +199,7 @@ export default function Header() {
 
       {/* Embedded CSS for Header Breakpoints */}
       <style jsx>{`
-        @media (min-width: 900px) {
+        @media (min-width: 960px) {
           :global(.desktop-nav),
           :global(.desktop-cta) {
             display: flex !important;
