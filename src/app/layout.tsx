@@ -28,6 +28,15 @@ export const metadata: Metadata = {
   verification: {
     google: "google96df37acacefbf8c",
   },
+  icons: {
+    icon: [
+      { url: '/icon', type: 'image/png', sizes: '512x512' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   keywords: [
     "Sri Krishna Plywoods & Hardwares",
     "Plywood shop in Hosur",
