@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileActionBar from '@/components/MobileActionBar';
+import ScrollToTop from '@/components/ScrollToTop';
 import JsonLd from '@/components/JsonLd';
 import { BUSINESS_DATA } from '@/data/business';
 
@@ -89,6 +90,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileActionBar />
+        <ScrollToTop />
       </body>
     </html>
   );

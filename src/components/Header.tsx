@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -8,20 +8,42 @@ import { BUSINESS_DATA } from '@/data/business';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+
+      // Determine background backdrop transition
+      setIsScrolled(currentScrollY > 20);
+
+      // Smart hide-on-scroll logic
+      if (currentScrollY > 120 && !mobileMenuOpen) {
+        if (currentScrollY > lastScrollY.current + 5) {
+          // Scrolling DOWN -> Hide header to maximize reading screen space
+          setShowHeader(false);
+        } else if (currentScrollY < lastScrollY.current - 5) {
+          // Scrolling UP -> Reveal header for instant navigation access
+          setShowHeader(true);
+        }
+      } else {
+        setShowHeader(true);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [mobileMenuOpen]);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setShowHeader(true);
   }, [pathname]);
 
   const navLinks = [
@@ -44,7 +66,8 @@ export default function Header() {
         backgroundColor: isScrolled ? 'rgba(252, 251, 248, 0.96)' : 'var(--linen-white)',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: `1px solid ${isScrolled ? 'var(--border-light)' : 'var(--border-subtle)'}`,
-        transition: 'all 0.3s ease',
+        transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -113,7 +136,10 @@ export default function Header() {
         {/* Mobile Hamburger Toggle Button */}
         <button
           className="mobile-toggle"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onClick={() => {
+            setMobileMenuOpen(!mobileMenuOpen);
+            setShowHeader(true);
+          }}
           aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
           style={{
             padding: '0.4rem',
