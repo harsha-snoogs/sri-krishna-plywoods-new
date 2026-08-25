@@ -25,7 +25,7 @@ export interface BrandItem {
   verificationUrl?: string;
 }
 
-export const ESTABLISHED_YEAR = 2006;
+export const ESTABLISHED_YEAR = 2008;
 
 export function getYearsInBusiness(
   targetYear = new Date().getFullYear(),
@@ -80,7 +80,7 @@ export const BUSINESS_DATA = {
   meta: {
     defaultTitle:
       "Sri Krishna Plywoods & Hardwares | Plywood & Hardware Shop in Hosur",
-    defaultDescription: `Sri Krishna Plywoods & Hardwares in Hosur has been a trusted supplier for over ${currentYears} years (Est. 2006). Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber. Call 9944057507.`,
+    defaultDescription: `Sri Krishna Plywoods & Hardwares in Hosur has been a trusted supplier for over ${currentYears} years (Est. 2008). Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber. Call 9944057507.`,
     siteUrl:
       process.env.NEXT_PUBLIC_SITE_URL || "https://srikrishnaplywoods.in",
   },
