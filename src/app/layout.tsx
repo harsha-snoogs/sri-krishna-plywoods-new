@@ -28,17 +28,6 @@ export const metadata: Metadata = {
   verification: {
     google: "google96df37acacefbf8c",
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '48x48' },
-      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
   keywords: [
     "Sri Krishna Plywoods & Hardwares",
     "Plywood shop in Hosur",
@@ -94,6 +83,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-IN">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="skph" />
+      </head>
       <body>
         <JsonLd />
         <Header />
