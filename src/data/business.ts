@@ -48,13 +48,14 @@ export const BUSINESS_DATA = {
   authorizedBrandsText:
     "Authorized Dealer for Greenply (verifiable on greenply.com) and leading dealer for Greenlam, Century Laminates, Fevicol (Pidilite), Godrej, Ebco, and Faber Chimneys.",
   address: {
-    street: "10/1, Near Pallavi Super Market, Indira Nagar, Avalapalli Hudco",
+    street:
+      "10/1, Near Pallavi Super Market, Indira Nagar Main road, Bagalur road",
     city: "Hosur",
     state: "Tamil Nadu",
     pincode: "635109",
     country: "India",
-    full: "10/1, Near Pallavi Super Market, Indira Nagar, Avalapalli Hudco, Hosur, Tamil Nadu 635109, India",
-    locality: "Avalapalli Hudco",
+    full: "10/1, Near Pallavi Super Market, Indira Nagar Main road, Bagalur road, Hosur, Tamil Nadu 635109, India",
+    locality: "Indira Nagar main road",
     landmark: "Near Pallavi Super Market",
   },
   geo: {

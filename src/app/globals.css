@@ -256,3 +256,7 @@ p {
     scroll-behavior: auto !important;
   }
 }
+
+.footer-contrast-color{
+color: rgba(245, 241, 235, 0.85)
+}
