@@ -141,6 +141,8 @@ export default function Header() {
             setShowHeader(true);
           }}
           aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
           style={{
             padding: '0.4rem',
             color: 'var(--deep-walnut)',
@@ -162,6 +164,7 @@ export default function Header() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div
+          id="mobile-menu"
           style={{
             position: 'absolute',
             top: '100%',

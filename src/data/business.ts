@@ -42,6 +42,7 @@ export const BUSINESS_DATA = {
   phone: "9944057507",
   formattedPhone: "+91 99440 57507",
   telLink: "tel:+919944057507",
+  whatsappLink: "https://wa.me/919944057507",
   establishedYear: ESTABLISHED_YEAR,
   yearsInBusiness: currentYears,
   historyText: `Sri Krishna Plywoods & Hardwares has been a trusted name in the plywood and hardware industry for over ${currentYears} years. We offer premium-quality plywood, laminates, hardware fittings, modular kitchen accessories, wardrobe fittings, adhesives, and interior materials for homes and commercial projects. We are authorized dealers of Greenply, and dealers for Greenlam, Century Laminates, Fevicol (Pidilite), Godrej, Ebco, and Faber Chimneys. Whether you're building a new home or renovating, we provide genuine products, expert guidance, competitive pricing, and GST billing—your one-stop destination for all plywood, laminate, and hardware needs.`,
@@ -67,6 +68,14 @@ export const BUSINESS_DATA = {
   hours: [
     { days: "Monday – Saturday", time: "10:00 AM – 8:30 PM" },
     { days: "Sunday", time: "Holiday" },
+  ],
+  // Machine-readable hours for schema.org (24h format). Keep in sync with `hours` above.
+  openingHours: [
+    {
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "20:30",
+    },
   ],
   serviceArea: [
     "Hosur",

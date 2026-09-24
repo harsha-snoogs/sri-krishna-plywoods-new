@@ -40,72 +40,75 @@ export default function FaqAccordion({ items, showCategoryHeaders = false }: Faq
               boxShadow: 'var(--shadow-subtle)',
             }}
           >
-            <button
-              id={buttonId}
-              aria-expanded={isOpen}
-              aria-controls={panelId}
-              onClick={() => toggleItem(item.id)}
-              style={{
-                width: '100%',
-                padding: '1.5rem 1.75rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '1rem',
-                textAlign: 'left',
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                {showCategoryHeaders && (
-                  <span
-                    style={{
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--olive-green)',
-                    }}
-                  >
-                    {item.categoryLabel}
-                  </span>
-                )}
-                <h3
-                  style={{
-                    fontSize: '1.15rem',
-                    fontWeight: 600,
-                    color: 'var(--deep-walnut)',
-                    lineHeight: 1.35,
-                  }}
-                >
-                  {item.question}
-                </h3>
-              </div>
-
-              {/* Accessible Toggle Icon Indicator */}
-              <span
+            <h3 style={{ margin: 0 }}>
+              <button
+                id={buttonId}
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                onClick={() => toggleItem(item.id)}
                 style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  backgroundColor: 'var(--stone-ivory)',
+                  width: '100%',
+                  padding: '1.5rem 1.75rem',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  transition: 'transform 0.25s ease',
-                  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                  color: 'var(--deep-walnut)',
-                  fontWeight: 700,
-                  fontSize: '1.1rem',
+                  justifyContent: 'space-between',
+                  gap: '1rem',
+                  textAlign: 'left',
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
                 }}
-                aria-hidden="true"
               >
-                ↓
-              </span>
-            </button>
+                <span style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                  {showCategoryHeaders && (
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                        color: 'var(--olive-green)',
+                      }}
+                    >
+                      {item.categoryLabel}
+                    </span>
+                  )}
+                  <span
+                    style={{
+                      display: 'block',
+                      fontSize: '1.15rem',
+                      fontWeight: 600,
+                      color: 'var(--deep-walnut)',
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    {item.question}
+                  </span>
+                </span>
+
+                {/* Accessible Toggle Icon Indicator */}
+                <span
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    backgroundColor: 'var(--stone-ivory)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    transition: 'transform 0.25s ease',
+                    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    color: 'var(--deep-walnut)',
+                    fontWeight: 700,
+                    fontSize: '1.1rem',
+                  }}
+                  aria-hidden="true"
+                >
+                  ↓
+                </span>
+              </button>
+            </h3>
 
             {/* Answer Content Panel (Crawlable in SSR HTML Output) */}
             <div

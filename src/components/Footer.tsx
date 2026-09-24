@@ -326,7 +326,7 @@ export default function Footer() {
           }}
         >
           <p className="footer-contrast-color">
-            © 2026 {BUSINESS_DATA.name}. All rights reserved.
+            © {new Date().getFullYear()} {BUSINESS_DATA.name}. All rights reserved.
           </p>
           <p className="footer-contrast-color">Powered by Yukhtara solutions</p>
         </div>

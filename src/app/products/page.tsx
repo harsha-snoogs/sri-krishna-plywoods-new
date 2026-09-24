@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { BUSINESS_DATA, PRODUCT_CATEGORIES, PRODUCTS_LIST } from '@/data/business';
 
 export const metadata = {
-  title: 'Product Catalog | Sri Krishna Plywoods & Hardwares Hosur',
+  title: 'Product Catalog | Plywood, Laminates & Hardware in Hosur',
   description: 'Explore our catalog of BWP marine plywood, commercial plywood, decorative laminates, architectural door hardware, and Fevicol adhesives in Hosur.',
   alternates: {
     canonical: '/products',

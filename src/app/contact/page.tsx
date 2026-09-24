@@ -4,7 +4,7 @@ import { BUSINESS_DATA } from '@/data/business';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
-  title: 'Contact Us | Sri Krishna Plywoods & Hardwares Hosur',
+  title: 'Contact Us & Store Directions in Hosur',
   description: `Contact Sri Krishna Plywoods & Hardwares in Hosur. ${BUSINESS_DATA.yearsInBusiness}+ years trusted supplier. Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber.`,
   alternates: {
     canonical: '/contact',

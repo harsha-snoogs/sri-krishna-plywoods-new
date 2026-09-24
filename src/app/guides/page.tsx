@@ -5,7 +5,7 @@ import { MATERIAL_GUIDES } from '@/data/guides';
 import { BUSINESS_DATA } from '@/data/business';
 
 export const metadata = {
-  title: 'Interior Material Guides | Sri Krishna Plywoods & Hardwares Hosur',
+  title: 'Interior Material Guides | Hosur',
   description: 'Practical guides on choosing kitchen plywood, commercial vs waterproof boards, laminate finishes, hardware fittings, and buying materials in Hosur.',
   alternates: {
     canonical: '/guides',

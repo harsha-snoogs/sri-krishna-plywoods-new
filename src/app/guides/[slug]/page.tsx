@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${guide.title} | Sri Krishna Plywoods Hosur`,
+    title: guide.title,
     description: guide.metaDescription,
     alternates: {
       canonical: `/guides/${guide.slug}`,

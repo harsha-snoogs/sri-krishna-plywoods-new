@@ -26,7 +26,7 @@ export default function ArticleJsonLd({ guide }: ArticleJsonLdProps) {
       url: BUSINESS_DATA.meta.siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${BUSINESS_DATA.meta.siteUrl}/images/hero.jpg`,
+        url: `${BUSINESS_DATA.meta.siteUrl}/images/logo.png`,
       },
     },
     mainEntityOfPage: {

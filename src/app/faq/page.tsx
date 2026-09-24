@@ -6,7 +6,7 @@ import FaqJsonLd from '@/components/FaqJsonLd';
 import { BUSINESS_DATA } from '@/data/business';
 
 export const metadata = {
-  title: 'Plywood, Laminate & Hardware FAQs | Sri Krishna Plywoods Hosur',
+  title: 'Plywood, Laminate & Hardware FAQs | Hosur',
   description: 'Practical answers to common questions about kitchen plywood, commercial vs waterproof plywood, laminates, hinges, and buying interior materials in Hosur.',
   alternates: {
     canonical: '/faq',

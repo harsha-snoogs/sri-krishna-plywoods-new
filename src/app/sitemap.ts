@@ -20,14 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
   ];
 
-  const guideRoutes = MATERIAL_GUIDES.map((g) => `/guides/${g.slug}`);
-
-  const allRoutes = [...staticRoutes, ...guideRoutes];
-
-  return allRoutes.map((route) => ({
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route.startsWith('/guides') ? ('monthly' as const) : ('weekly' as const),
-    priority: route === '' ? 1.0 : route.startsWith('/guides') ? 0.7 : 0.8,
+    changeFrequency: 'weekly',
+    priority: route === '' ? 1.0 : 0.8,
   }));
+
+  const guideEntries: MetadataRoute.Sitemap = MATERIAL_GUIDES.map((g) => ({
+    url: `${baseUrl}/guides/${g.slug}`,
+    lastModified: g.publishDate,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...guideEntries];
 }

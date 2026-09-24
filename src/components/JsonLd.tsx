@@ -8,7 +8,7 @@ export default function JsonLd() {
     name: BUSINESS_DATA.name,
     description: BUSINESS_DATA.meta.defaultDescription,
     url: BUSINESS_DATA.meta.siteUrl,
-    telephone: '+919944057507',
+    telephone: BUSINESS_DATA.telLink.replace('tel:', ''),
     priceRange: '₹₹',
     image: `${BUSINESS_DATA.meta.siteUrl}/images/hero.jpg`,
     address: {
@@ -25,13 +25,9 @@ export default function JsonLd() {
       longitude: BUSINESS_DATA.geo.longitude,
     },
     hasMap: BUSINESS_DATA.mapsUrl,
-    openingHoursSpecification: BUSINESS_DATA.hours.map((h) => ({
+    openingHoursSpecification: BUSINESS_DATA.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: h.days.includes('Sunday')
-        ? ['Sunday']
-        : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: h.time.split(' – ')[0]?.replace(' AM', ':00')?.replace(' PM', ':00') || '08:30',
-      closes: h.time.split(' – ')[1]?.replace(' AM', ':00')?.replace(' PM', ':00') || '20:30',
+      ...h,
     })),
     areaServed: BUSINESS_DATA.serviceArea.map((area) => ({
       '@type': 'AdministrativeArea',

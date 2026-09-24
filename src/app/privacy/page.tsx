@@ -2,7 +2,7 @@ import React from 'react';
 import { BUSINESS_DATA } from '@/data/business';
 
 export const metadata = {
-  title: 'Privacy Policy | Sri Krishna Plywoods & Hardwares',
+  title: 'Privacy Policy',
   description: 'Privacy policy for Sri Krishna Plywoods & Hardwares in Hosur, Tamil Nadu.',
   alternates: {
     canonical: '/privacy',
