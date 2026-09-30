@@ -1,12 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { BUSINESS_DATA, TRUSTED_BRANDS } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Authorized Greenply Dealer & Brand Stockist | Hosur',
   description: `Sri Krishna Plywoods & Hardwares is the authorized Greenply dealer in Hosur (verifiable on Greenply.com) and dealer for Fevicol, Greenlam, Century, Godrej, Ebco & Faber.`,
   alternates: {
     canonical: '/brands',
+  },
+  openGraph: {
+    title: 'Authorized Greenply Dealer & Brand Stockist | Hosur | Sri Krishna Plywoods & Hardwares',
+    description: `Sri Krishna Plywoods & Hardwares is the authorized Greenply dealer in Hosur (verifiable on Greenply.com) and dealer for Fevicol, Greenlam, Century, Godrej, Ebco & Faber.`,
+    url: `${BUSINESS_DATA.meta.siteUrl}/brands`,
   },
 };
 
@@ -16,6 +22,7 @@ export default function BrandsPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Brands', item: '/brands' }]} />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>

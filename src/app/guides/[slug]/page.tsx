@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MATERIAL_GUIDES } from '@/data/guides';
 import ArticleJsonLd from '@/components/ArticleJsonLd';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { BUSINESS_DATA } from '@/data/business';
 
 export async function generateStaticParams() {
@@ -63,6 +64,12 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   return (
     <>
       <ArticleJsonLd guide={guide} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Guides', item: '/guides' },
+          { name: guide.title, item: `/guides/${guide.slug}` },
+        ]}
+      />
 
       {/* Guide Header */}
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>

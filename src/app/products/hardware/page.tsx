@@ -2,12 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUSINESS_DATA, PRODUCTS_LIST } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Hardware Shop in Hosur | Architectural Hinges, Locks & Handles',
   description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies soft-close hydraulic cabinet hinges, mortise locks, drawer telescopic channels, and brass door handles.',
   alternates: {
     canonical: '/products/hardware',
+  },
+  openGraph: {
+    title: 'Hardware Shop in Hosur | Sri Krishna Plywoods & Hardwares',
+    description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies soft-close hydraulic cabinet hinges, mortise locks, drawer telescopic channels, and brass door handles.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/products/hardware`,
   },
 };
 
@@ -16,6 +22,12 @@ export default function HardwarePage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Products', item: '/products' },
+          { name: 'Hardware', item: '/products/hardware' },
+        ]}
+      />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--graphite-muted)', marginBottom: '1rem' }}>
@@ -70,7 +82,7 @@ export default function HardwarePage() {
 
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <a href={BUSINESS_DATA.telLink} className="btn-primary" style={{ flex: 1, textAlign: 'center', justifyContent: 'center' }}>
-                    Call for Price Quote
+                    Get Quote
                   </a>
                 </div>
               </div>

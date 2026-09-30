@@ -7,32 +7,43 @@ interface ArticleJsonLdProps {
 }
 
 export default function ArticleJsonLd({ guide }: ArticleJsonLdProps) {
+  const siteUrl = BUSINESS_DATA.meta.siteUrl.replace(/\/$/, '');
+  const guideUrl = `${siteUrl}/guides/${guide.slug}`;
+
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'TechArticle',
+    '@id': `${guideUrl}#article`,
     headline: guide.title,
     description: guide.metaDescription,
-    image: `${BUSINESS_DATA.meta.siteUrl}${guide.heroImage}`,
+    image: `${siteUrl}${guide.heroImage}`,
     datePublished: guide.publishDate,
     dateModified: guide.publishDate,
+    inLanguage: 'en-IN',
     author: {
       '@type': 'Organization',
-      name: BUSINESS_DATA.name,
-      url: BUSINESS_DATA.meta.siteUrl,
+      name: `${BUSINESS_DATA.name} Material Desk`,
+      url: siteUrl,
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
       name: BUSINESS_DATA.name,
-      url: BUSINESS_DATA.meta.siteUrl,
+      url: siteUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${BUSINESS_DATA.meta.siteUrl}/images/logo.png`,
+        url: `${siteUrl}/images/logo.png`,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${BUSINESS_DATA.meta.siteUrl}/guides/${guide.slug}`,
+      '@id': guideUrl,
     },
+    about: {
+      '@type': 'Thing',
+      name: guide.category,
+    },
+    articleSection: guide.category,
   };
 
   return (

@@ -182,4 +182,15 @@ export const FAQ_DATA: FaqItem[] = [
       href: '/contact',
     },
   },
+  {
+    id: 'fevicol-nail-free-ultra-faq',
+    category: 'hardware',
+    categoryLabel: 'Adhesives & Fixings',
+    question: 'Is Fevicol Nail Free Ultra recommended as an adhesive for glass applications and heavy mirror mounting?',
+    answer: 'Yes! Fevicol Nail Free Ultra by Pidilite is specially engineered as a heavy-duty adhesive for glass applications, heavy mirror wall mounting, glass cladding, and drill-free wall paneling. Unlike acid-cure silicones that corrode or desilver mirror backing and stain glass edges over time, Nail Free Ultra is a 100% neutral-cure, non-corrosive, non-staining adhesive sealant. It provides high instant green-grab and supports up to 18–20 kg per sq. ft. post-cure, allowing frameless glass panels, gym mirrors, bathroom vanity mirrors, and decorative glass to be securely mounted directly onto concrete, tile, plywood, or aluminum frames without drilling holes or using visible metal clips.',
+    relatedLink: {
+      label: 'Read Full Glass & Wall Panel Adhesive Guide',
+      href: '/guides/how-to-use-fevicol-nail-free-ultra',
+    },
+  },
 ];

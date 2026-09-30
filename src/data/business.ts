@@ -72,7 +72,14 @@ export const BUSINESS_DATA = {
   // Machine-readable hours for schema.org (24h format). Keep in sync with `hours` above.
   openingHours: [
     {
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
       opens: "10:00",
       closes: "20:30",
     },
@@ -236,17 +243,17 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     slug: "adhesives",
-    title: "Adhesives & Appliances",
+    title: "Adhesives & Wood Bonding",
     subtitle:
-      "Industrial-grade bonding solutions and premium Faber kitchen chimneys.",
+      "Industrial-grade synthetic resins, Pidilite Fevicol range, and glass adhesives.",
     description:
-      "Formulated for maximum bond strength, quick setting time, and high moisture resistance featuring genuine Fevicol (Pidilite) products along with Faber kitchen appliances.",
-    image: "/images/adhesives.jpg",
+      "Formulated for maximum bond strength, quick setting time, and high moisture resistance featuring genuine Fevicol SH, Marine, Speedx, ProBond, and Nail Free Ultra.",
+    image: "/images/fevicol-range.jpg",
     highlights: [
-      "Fevicol Marine & SH Resins",
-      "Faber High-Suction Kitchen Chimneys",
-      "Heatproof & Waterproof Adhesives",
-      "Hot Melt Edge Banding Glue",
+      "Fevicol ProBond, Speedx & SH Resins",
+      "Fevicol Marine Waterproof Grade",
+      "Fevicol Nail Free Ultra Glass Adhesive",
+      "Heatproof & Multi-Surface Bonding",
     ],
   },
 ];
@@ -379,32 +386,89 @@ export const PRODUCTS_LIST: ProductItem[] = [
     image: "/images/hardware.jpg",
   },
   {
-    id: "fevicol-faber-adhesives-appliances",
-    name: "Fevicol Wood Adhesives & Faber Kitchen Chimneys",
+    id: "fevicol-wood-adhesives",
+    name: "Fevicol Synthetic Wood Adhesives (Pidilite)",
     category: "adhesives",
     shortDesc:
-      "Genuine Fevicol (Pidilite) synthetic resins and high-suction Faber kitchen chimneys.",
+      "Genuine Fevicol (Pidilite) SH, Marine, Speedx, and ProBond industrial synthetic resins.",
     description:
-      "Trusted across Hosur for joinery, laminating, and wood bonding. Stocking Fevicol SH, Marine, and Heatproof adhesives alongside Faber kitchen chimneys and hobs.",
+      "Stocking genuine Fevicol SH, Marine, Speedx, and ProBond synthetic resins engineered for high tensile strength, quick setting time, and superior moisture resistance across wood joinery and laminate pressing in Hosur.",
     features: [
       "High Tensile & Shear Bond Strength",
-      "Dries Clear for Invisible Joinery",
-      "Faber Kitchen Chimneys & Hobs",
-      "Solvent-Free & Low Odor Formulations",
+      "Fevicol ProBond, Speedx & Marine Resins",
+      "Dries Clear for Clean, Invisible Joinery",
+      "Resistant to Water, Heat & Moisture",
     ],
-    brandsAvailable: ["Fevicol (Pidilite)", "Faber"],
+    brandsAvailable: ["Fevicol (Pidilite)"],
     applications: [
       "Laminate to Plywood Pressing",
       "Wood Joinery & Tenon Joints",
-      "Kitchen Ventilation Chimneys",
+      "Veneer Pasting & Edge Banding",
       "General Furniture Assembly",
     ],
     specifications: {
       "Fevicol Pack Sizes": "1kg, 2kg, 5kg, 10kg, 20kg, 50kg",
-      "Faber Chimneys": "Auto-Clean Filterless & Baffle Filter Models",
       "Bond Handling Strength": "4 - 6 hours",
+      "Drying Finish": "Transparent / Clear",
       "GST Invoice": "100% Tax Paid GST Invoice Provided",
     },
-    image: "/images/adhesives.jpg",
+    image: "/images/fevicol-range.jpg",
+  },
+  {
+    id: "faber-kitchen-chimneys",
+    name: "Faber Kitchen Chimneys & Built-In Hobs",
+    category: "hardware",
+    shortDesc:
+      "High-suction Faber filterless & baffle filter auto-clean kitchen chimneys and built-in hobs.",
+    description:
+      "Upgrade your modular kitchen in Hosur with genuine Faber kitchen chimneys featuring high suction capacity, heat auto-clean technology, and motion-sensor touch controls for smoke-free cooking.",
+    features: [
+      "Powerful 1200–1500 m³/hr Air Suction Capacity",
+      "Thermal Auto-Clean Filterless & Baffle Filter Tech",
+      "Touch Control & Gesture Motion Sensor Operation",
+      "Genuine Manufacturer Warranty & GST Invoice",
+    ],
+    brandsAvailable: ["Faber"],
+    applications: [
+      "Modular Kitchen Smoke & Oil Extraction",
+      "Built-In Kitchen Hobs & Gas Stoves",
+      "Modern Kitchen Ventilation & Air Cleaning",
+    ],
+    specifications: {
+      "Chimney Models": "Auto-Clean Filterless, Baffle Filter, Curved Glass",
+      "Suction Power": "1200 - 1500 m3/hr",
+      "Control Type": "Touch & Motion Sensor Gesture Control",
+      "Warranty & Billing": "Official Warranty with 100% GST Bill",
+    },
+    image: "/images/hardware.jpg",
+  },
+  {
+    id: "fevicol-nail-free-ultra",
+    name: "Fevicol Nail Free Ultra (Pidilite)",
+    category: "adhesives",
+    shortDesc:
+      "High-grab construction adhesive specially formulated for glass applications, heavy mirror mounting, and drill-free wall paneling.",
+    description:
+      "Fevicol Nail Free Ultra by Pidilite is a heavy-duty, moisture-curing adhesive sealant engineered as a high-strength adhesive for glass applications, heavy mirror mounting, drill-free wall paneling, and stone cladding in Hosur.",
+    features: [
+      "Specialized Adhesive for Glass & Mirror Mounting",
+      "Drill-Free & Nail-Free Framing (Zero Wall Damage)",
+      "High Instant Green-Grab (18–20 kg/sq.ft Capacity)",
+      "Non-Corrosive Formula (Protects Mirror Backing)",
+    ],
+    brandsAvailable: ["Fevicol (Pidilite)"],
+    applications: [
+      "Glass Wall Cladding & Partition Fixing",
+      "Bathroom & Gym Mirror Mounting",
+      "Glass to Plywood, Metal Profile & Wall Bonding",
+      "Decorative Wall Paneling & Fluted Louvers",
+    ],
+    specifications: {
+      "Primary Application": "Adhesive for Glass Applications & Mirrors",
+      "Mirror Compatibility": "100% Non-Corrosive to Silver Backing",
+      "Skin Time & Cure": "~15 Mins | 2 mm / 24 Hours",
+      "Weight Load Capacity": "18–20 kg / sq. ft.",
+    },
+    image: "/images/nail-free-banner.webp",
   },
 ];

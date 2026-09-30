@@ -9,6 +9,7 @@ import {
 import { FAQ_DATA } from "@/data/faq";
 import { MATERIAL_GUIDES } from "@/data/guides";
 import FaqAccordion from "@/components/FaqAccordion";
+import FaqJsonLd from "@/components/FaqJsonLd";
 
 export default function HomePage() {
   const featuredFaqs = FAQ_DATA.slice(0, 4);
@@ -21,6 +22,7 @@ export default function HomePage() {
 
   return (
     <>
+      <FaqJsonLd faqs={featuredFaqs} />
       {/* 1. HERO SECTION */}
       <section
         style={{

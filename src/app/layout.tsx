@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     "Hardware shop near Indira Nagar Hosur",
     "Fevicol dealers Hosur",
     "Greenply Hosur",
+    "Adhesive for glass applications",
+    "Glass to wall adhesive",
+    "Mirror mounting adhesive",
+    "Fevicol Nail Free Ultra Hosur",
   ],
   openGraph: {
     title: BUSINESS_DATA.meta.defaultTitle,

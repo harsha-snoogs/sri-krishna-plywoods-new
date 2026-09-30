@@ -2,12 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUSINESS_DATA, PRODUCTS_LIST } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Laminates & Decorative Surfaces in Hosur | 1mm & Acrylic Sheets',
   description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies high-pressure decorative laminates, anti-fingerprint matte sheets, and woodgrain finishes from Greenlam & Century.',
   alternates: {
     canonical: '/products/laminates',
+  },
+  openGraph: {
+    title: 'Laminates & Decorative Surfaces in Hosur | Sri Krishna Plywoods & Hardwares',
+    description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies high-pressure decorative laminates, anti-fingerprint matte sheets, and woodgrain finishes from Greenlam & Century.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/products/laminates`,
   },
 };
 
@@ -16,6 +22,12 @@ export default function LaminatesPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Products', item: '/products' },
+          { name: 'Laminates', item: '/products/laminates' },
+        ]}
+      />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--graphite-muted)', marginBottom: '1rem' }}>
@@ -70,7 +82,7 @@ export default function LaminatesPage() {
 
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <a href={BUSINESS_DATA.telLink} className="btn-primary" style={{ flex: 1, textAlign: 'center', justifyContent: 'center' }}>
-                    Call for Swatch Catalog
+                    Get Quote
                   </a>
                 </div>
               </div>

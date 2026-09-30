@@ -1,16 +1,29 @@
 import React from 'react';
-import { BUSINESS_DATA } from '@/data/business';
+import { BUSINESS_DATA, PRODUCT_CATEGORIES } from '@/data/business';
 
 export default function JsonLd() {
+  const siteUrl = BUSINESS_DATA.meta.siteUrl.replace(/\/$/, '');
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'HardwareStore',
+    '@id': `${siteUrl}/#organization`,
     name: BUSINESS_DATA.name,
+    alternateName: ['Sri Krishna Plywoods and Hardwares', 'SKPH'],
+    legalName: BUSINESS_DATA.name,
     description: BUSINESS_DATA.meta.defaultDescription,
-    url: BUSINESS_DATA.meta.siteUrl,
-    telephone: BUSINESS_DATA.telLink.replace('tel:', ''),
+    url: siteUrl,
+    telephone: `+91${BUSINESS_DATA.phone}`,
     priceRange: '₹₹',
-    image: `${BUSINESS_DATA.meta.siteUrl}/images/hero.jpg`,
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, UPI, Credit Card, Debit Card, Net Banking',
+    foundingDate: `${BUSINESS_DATA.establishedYear}`,
+    image: [
+      `${siteUrl}/images/hero.jpg`,
+      `${siteUrl}/images/showroom.jpg`,
+      `${siteUrl}/images/plywood.jpg`,
+    ],
+    logo: `${siteUrl}/images/logo.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS_DATA.address.street,
@@ -27,12 +40,42 @@ export default function JsonLd() {
     hasMap: BUSINESS_DATA.mapsUrl,
     openingHoursSpecification: BUSINESS_DATA.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
-      ...h,
+      dayOfWeek: h.dayOfWeek,
+      opens: h.opens,
+      closes: h.closes,
     })),
     areaServed: BUSINESS_DATA.serviceArea.map((area) => ({
       '@type': 'AdministrativeArea',
       name: `${area}, Hosur, Tamil Nadu`,
     })),
+    knowsAbout: [
+      'Plywood',
+      'Boiling Water Proof (BWP) Marine Plywood',
+      'Moisture Resistant (MR) Commercial Plywood',
+      'Blockboards',
+      'Decorative High-Pressure Laminates',
+      'Natural Timber Veneers',
+      'Architectural Door Hardware',
+      'Godrej Security Locks',
+      'Ebco Modular Kitchen Fittings',
+      'Faber Kitchen Chimneys',
+      'Fevicol Synthetic Wood Adhesives',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Plywood, Laminate, Hardware & Adhesive Offerings',
+      itemListElement: PRODUCT_CATEGORIES.map((cat, idx) => ({
+        '@type': 'OfferCatalog',
+        name: cat.title,
+        description: cat.description,
+        position: idx + 1,
+        url: `${siteUrl}/products/${cat.slug}`,
+      })),
+    },
+    sameAs: [
+      BUSINESS_DATA.mapsUrl,
+      'https://www.greenply.com/dealers/tamil-nadu/hosur',
+    ],
   };
 
   return (

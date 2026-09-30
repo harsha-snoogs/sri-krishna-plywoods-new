@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MATERIAL_GUIDES } from '@/data/guides';
 import { BUSINESS_DATA } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Interior Material Guides | Hosur',
@@ -10,11 +11,17 @@ export const metadata = {
   alternates: {
     canonical: '/guides',
   },
+  openGraph: {
+    title: 'Interior Material Guides | Hosur | Sri Krishna Plywoods & Hardwares',
+    description: 'Practical guides on choosing kitchen plywood, commercial vs waterproof boards, laminate finishes, hardware fittings, and buying materials in Hosur.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/guides`,
+  },
 };
 
 export default function GuidesHubPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Guides', item: '/guides' }]} />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>

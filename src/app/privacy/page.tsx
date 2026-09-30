@@ -1,5 +1,6 @@
 import React from 'react';
 import { BUSINESS_DATA } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Privacy Policy',
@@ -11,6 +12,8 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
+    <>
+      <BreadcrumbJsonLd items={[{ name: 'Privacy Policy', item: '/privacy' }]} />
     <section className="section-padding">
       <div className="container" style={{ maxWidth: '800px' }}>
         <h1 style={{ marginBottom: '1.5rem' }}>Privacy Policy</h1>
@@ -38,5 +41,6 @@ export default function PrivacyPage() {
         </address>
       </div>
     </section>
+    </>
   );
 }

@@ -2,12 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUSINESS_DATA, PRODUCTS_LIST } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Plywood Dealers in Hosur | BWP Marine & Commercial Plywood',
   description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies IS:710 BWP waterproof marine plywood, IS:303 commercial MR plywood, and blockboards from Greenply & Century.',
   alternates: {
     canonical: '/products/plywood',
+  },
+  openGraph: {
+    title: 'Plywood Dealers in Hosur | BWP Marine & Commercial Plywood | Sri Krishna Plywoods & Hardwares',
+    description: 'Sri Krishna Plywoods & Hardwares in Hosur supplies IS:710 BWP waterproof marine plywood, IS:303 commercial MR plywood, and blockboards from Greenply & Century.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/products/plywood`,
   },
 };
 
@@ -16,6 +22,12 @@ export default function PlywoodPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Products', item: '/products' },
+          { name: 'Plywood', item: '/products/plywood' },
+        ]}
+      />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--graphite-muted)', marginBottom: '1rem' }}>
@@ -112,7 +124,7 @@ export default function PlywoodPage() {
 
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <a href={BUSINESS_DATA.telLink} className="btn-primary" style={{ flex: 1, textAlign: 'center', justifyContent: 'center' }}>
-                    Call for Price Quote
+                    Get Quote
                   </a>
                 </div>
               </div>

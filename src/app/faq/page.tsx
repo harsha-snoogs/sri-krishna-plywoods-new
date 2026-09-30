@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FAQ_DATA } from '@/data/faq';
 import FaqAccordion from '@/components/FaqAccordion';
 import FaqJsonLd from '@/components/FaqJsonLd';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { BUSINESS_DATA } from '@/data/business';
 
 export const metadata = {
@@ -10,6 +11,11 @@ export const metadata = {
   description: 'Practical answers to common questions about kitchen plywood, commercial vs waterproof plywood, laminates, hinges, and buying interior materials in Hosur.',
   alternates: {
     canonical: '/faq',
+  },
+  openGraph: {
+    title: 'Plywood, Laminate & Hardware FAQs | Hosur | Sri Krishna Plywoods & Hardwares',
+    description: 'Practical answers to common questions about kitchen plywood, commercial vs waterproof plywood, laminates, hinges, and buying interior materials in Hosur.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/faq`,
   },
 };
 
@@ -22,6 +28,7 @@ export default function FaqPage() {
   return (
     <>
       <FaqJsonLd faqs={FAQ_DATA} />
+      <BreadcrumbJsonLd items={[{ name: 'FAQs', item: '/faq' }]} />
 
       {/* Page Header */}
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>

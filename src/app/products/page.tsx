@@ -1,20 +1,27 @@
 import React from 'react';
-import Metadata from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUSINESS_DATA, PRODUCT_CATEGORIES, PRODUCTS_LIST } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Product Catalog | Plywood, Laminates & Hardware in Hosur',
   description: 'Explore our catalog of BWP marine plywood, commercial plywood, decorative laminates, architectural door hardware, and Fevicol adhesives in Hosur.',
   alternates: {
     canonical: '/products',
+  },
+  openGraph: {
+    title: 'Product Catalog | Plywood, Laminates & Hardware in Hosur | Sri Krishna Plywoods & Hardwares',
+    description: 'Explore our catalog of BWP marine plywood, commercial plywood, decorative laminates, architectural door hardware, and Fevicol adhesives in Hosur.',
+    url: `${BUSINESS_DATA.meta.siteUrl}/products`,
   },
 };
 
 export default function ProductsPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Products', item: '/products' }]} />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>
@@ -169,7 +176,7 @@ export default function ProductsPage() {
             Looking for specific plywood sheet thickness or custom laminate swatches? Call our team at Indira Nagar, Hosur.
           </p>
           <a href={BUSINESS_DATA.telLink} className="btn-primary">
-            Call {BUSINESS_DATA.phone}
+            Get Quote
           </a>
         </div>
       </section>

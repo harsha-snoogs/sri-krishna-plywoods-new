@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BUSINESS_DATA } from '@/data/business';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: `About Us | ${BUSINESS_DATA.yearsInBusiness}+ Years Trusted Plywood & Hardware Store in Hosur`,
@@ -9,11 +10,17 @@ export const metadata = {
   alternates: {
     canonical: '/about',
   },
+  openGraph: {
+    title: `About Us | ${BUSINESS_DATA.yearsInBusiness}+ Years Trusted Store in Hosur`,
+    description: `Sri Krishna Plywoods & Hardwares in Hosur (Est. ${BUSINESS_DATA.establishedYear}). Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber.`,
+    url: `${BUSINESS_DATA.meta.siteUrl}/about`,
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'About Us', item: '/about' }]} />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { BUSINESS_DATA } from '@/data/business';
 import ContactForm from '@/components/ContactForm';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Contact Us & Store Directions in Hosur',
@@ -9,11 +10,17 @@ export const metadata = {
   alternates: {
     canonical: '/contact',
   },
+  openGraph: {
+    title: 'Contact Us & Store Directions in Hosur | Sri Krishna Plywoods & Hardwares',
+    description: `Contact Sri Krishna Plywoods & Hardwares in Hosur. ${BUSINESS_DATA.yearsInBusiness}+ years trusted supplier. Authorized Greenply dealer & dealer for Greenlam, Century, Fevicol, Godrej, Ebco & Faber.`,
+    url: `${BUSINESS_DATA.meta.siteUrl}/contact`,
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Contact Us', item: '/contact' }]} />
       <section style={{ backgroundColor: 'var(--stone-ivory-light)', padding: '4rem 0 3rem' }}>
         <div className="container">
           <span className="badge" style={{ marginBottom: '1rem' }}>
