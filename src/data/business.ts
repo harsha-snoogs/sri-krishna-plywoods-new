@@ -235,10 +235,10 @@ export const PRODUCT_CATEGORIES = [
       "High-durability functional hardware from Godrej, Ebco, Häfele, and Europa. Complete range of soft-close hinges, mortise locks, drawer slides, and handles.",
     image: "/images/hardware.jpg",
     highlights: [
-      "Godrej & Europa Mortise Locks",
-      "Ebco & Häfele Modular Kitchen Fittings",
-      "Soft-Close Hydraulic Hinges",
-      "Telescopic & Undermount Drawer Channels",
+      "Door Fittings & Mortise Locks",
+      "SS 304 Hinges & Hydraulic Closers",
+      "Godrej & Europa Security Locks",
+      "Ebco & Häfele Modular Accessories",
     ],
   },
   {
@@ -355,6 +355,35 @@ export const PRODUCTS_LIST: ProductItem[] = [
       Maintenance: "Wipe clean with soft damp cloth",
     },
     image: "/images/laminates.jpg",
+  },
+  {
+    id: "door-fittings-architectural-hardware",
+    name: "Architectural Door Fittings, Handles & SS Hinges",
+    category: "hardware",
+    shortDesc:
+      "Premium brass door handles, SS 304 heavy-duty hinges, mortise locks, hydraulic door closers, and tower bolts.",
+    description:
+      "Complete range of architectural door fittings in Hosur for main doors, bedroom doors, and commercial entrances. Featuring SS 304 ball-bearing hinges, designer mortise handles, hydraulic door closers, magnetic door stoppers, tower bolts, and high-security Godrej door locks.",
+    features: [
+      "SS 304 Heavy-Duty Ball Bearing Door Hinges",
+      "Designer Brass & SS Mortise Lever Handles",
+      "Hydraulic Overhead Door Closers & Stoppers",
+      "Godrej & Europa High-Security Mortise & Rim Locks",
+    ],
+    brandsAvailable: ["Godrej", "Ebco", "Häfele", "Europa"],
+    applications: [
+      "Main Entrance Wooden Doors",
+      "Internal Bedroom & Bathroom Doors",
+      "Commercial & Office Entrance Doors",
+      "Heavy Teak Wood & Flush Doors",
+    ],
+    specifications: {
+      "Door Fitting Types": "Mortise Handles, SS Hinges, Tower Bolts, Door Closers",
+      "Material Grades": "SS 304 Stainless Steel & Antique Solid Brass",
+      "Locking Systems": "Double Turn Mortise Locks, Digital & Keypad Locks",
+      "Warranty & Billing": "Genuine Branded Hardware with 100% GST Bill",
+    },
+    image: "/images/hardware.jpg",
   },
   {
     id: "godrej-ebco-hardware-locks",

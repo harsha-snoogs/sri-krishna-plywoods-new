@@ -126,6 +126,17 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Select cabinet hinges based on door overlay (0 crank for full overlay, 8 crank for half overlay, 15 crank for inset) and insist on integrated hydraulic soft-close dampers to prevent door slam. For drawer channels, choose ball-bearing telescopic slides rated for 35kg–45kg load capacity or undermount concealed soft-close runners for high-end cabinetry.',
   },
   {
+    id: 'door-fittings-store-hosur',
+    category: 'hardware',
+    categoryLabel: 'Hardware',
+    question: 'Where can I buy genuine architectural door fittings & mortise locks in Hosur?',
+    answer: 'Sri Krishna Plywoods & Hardwares in Indira Nagar, Hosur is an authorized dealer supplying SS 304 ball-bearing hinges, designer brass door handles, hydraulic door closers, tower bolts, magnetic door stoppers, and high-security Godrej & Europa mortise locks with 100% GST invoice.',
+    relatedLink: {
+      label: 'View Door Fittings & Hardware',
+      href: '/products/hardware',
+    },
+  },
+  {
     id: 'wardrobe-hardware-considerations',
     category: 'hardware',
     categoryLabel: 'Hardware',
